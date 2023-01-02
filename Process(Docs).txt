@@ -1,0 +1,44 @@
+I created a small GUI to use YouTube API to download videos
+
+The first issue was simply trying to download the video itself.
+After looking at the documentation I realized I was using a YouTube Class incorrectly.
+I put the YouTube("LINK") inside of a variable and did nothing with that variable.
+YouTube class itself can download whatever link you put inside.
+
+I built a function that would take user data and attempt to download the video and was successful.
+A new problem as rose as a result. I was able to download the video but the quality is very bad.
+I added a filtering to the code to look for 1080p and download that. Success!
+
+The downloaded video was in pristine HD but there was no audio?
+
+Why is that?
+
+
+Well according to the documentation....
+
+"You may notice that some streams listed have both a video codec and audio codec, while others have just video or just audio, 
+this is a result of YouTube supporting a streaming technique called Dynamic Adaptive Streaming over HTTP (DASH)"
+
+
+The question how do we deal with this issue of having audio and video split?
+	I willl have to merge them back together using something like FFMPEG software
+
+Another issue was raised, how to deal with the downloading function only downloading 1 video?
+	Renaming the file post download should allow the function to download the same video twice
+	Instead I just moved the file into a different folder therefore allowing the program to download 2 of the same videos if need be
+
+
+Added error handling for videos blocked, removed, or invalid URLs or wrong string type
+
+Now wanting to add gui to program using pysimgplegui library
+
+Lastly, converted PY file type into .EXE making it usable on any desktop!
+			
+			
+
+
+
+
+
+
+
